@@ -4,6 +4,7 @@ import CHIP_IO.GPIO as GPIO
 import time
 import rospy
 from std_msgs.msg import String
+import rospy
 
 #GPIO Mode (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)

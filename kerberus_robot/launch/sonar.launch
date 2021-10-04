@@ -1,5 +1,5 @@
 <launch>
 
-  <node name="sonar_publisher" pkg="kerberus_robot" type="sonar_publisher.py" respawn="true" launch-prefix="sudo"/>
+  <node name="sonar_publisher" pkg="kerberus_robot" type="sonar_publisher.py" respawn="true" launch-prefix="sudo -E"/>
 
 </launch>

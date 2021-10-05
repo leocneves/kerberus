@@ -54,7 +54,7 @@ def sonar():
         while not rospy.is_shutdown():
             # hello_str = "hello world %s" % rospy.get_time()
             dist = str(distance())
-            rospy.loginfo("Measured Distance = %.1f cm" % dist)
+            rospy.loginfo("Measured Distance = " + dist)
             pub.publish(dist)
             rate.sleep()
 

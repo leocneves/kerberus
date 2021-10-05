@@ -53,9 +53,9 @@ def sonar():
     try:
         while not rospy.is_shutdown():
             # hello_str = "hello world %s" % rospy.get_time()
-            dist = distance()
+            dist = str(distance())
             rospy.loginfo("Measured Distance = %.1f cm" % dist)
-            pub.publish(str(dist))
+            pub.publish(dist)
             rate.sleep()
 
     except KeyboardInterrupt:

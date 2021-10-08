@@ -9,7 +9,7 @@ cd /home/ubuntu/catkin_ws/src/kerberus
 git pull
 echo "##### REPOSITORY UPDATED! #####"
 
-source /opt/ros/indigo/setup.bash
+source /opt/ros/kinetic/setup.bash
 source /home/ubuntu/catkin_ws/devel/setup.bash
 
 echo "##### ENV SOURCED! #####"

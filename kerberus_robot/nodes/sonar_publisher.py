@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import CHIP_IO.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 import rospy
 from std_msgs.msg import String
@@ -10,8 +10,8 @@ import rospy
 GPIO.setmode(GPIO.BCM)
 
 #set GPIO Pins
-GPIO_TRIGGER = "CSID2"
-GPIO_ECHO = "CSID0"
+GPIO_TRIGGER = "GPIO20"
+GPIO_ECHO = "GPIO21"
 
 #set GPIO direction (IN / OUT)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
@@ -67,4 +67,6 @@ if __name__ == '__main__':
     try:
         sonar()
     except rospy.ROSInterruptException:
+        print('finishing ...')
+        GPIO.cleanup()
         pass

@@ -4,14 +4,13 @@ import RPi.GPIO as GPIO
 import time
 import rospy
 from std_msgs.msg import String
-import rospy
 
 #GPIO Mode (BOARD / BCM)
 GPIO.setmode(GPIO.BCM)
 
 #set GPIO Pins
-GPIO_TRIGGER = "GPIO20"
-GPIO_ECHO = "GPIO21"
+GPIO_TRIGGER = 20
+GPIO_ECHO = 21
 
 #set GPIO direction (IN / OUT)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)

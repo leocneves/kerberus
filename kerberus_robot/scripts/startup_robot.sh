@@ -5,6 +5,10 @@ export ROS_IP=192.168.15.37
 export ROS_USERNAME=192.168.15.37
 echo "##### ENV VAR UPDATED! #####"
 
+sh -c "echo nameserver 8.8.8.8 > /etc/resolv.conf"
+
+echo "######### ARRUMA DNS ############"
+
 cd /home/ubuntu/catkin_ws/src/kerberus
 git pull
 echo "##### REPOSITORY UPDATED! #####"

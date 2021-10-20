@@ -14,6 +14,10 @@ source /home/ubuntu/catkin_ws/devel/setup.bash
 
 echo "##### ENV SOURCED! #####"
 
+chmod 777 /dev/ttyACM0
+
+echo "##### PERMISSIONS ADDED! #####"
+
 echo "##### STARTING ROS... #####"
 # running sensor nodes
 roslaunch kerberus_robot sonar.launch

@@ -27,6 +27,7 @@ class StartTalk(smach.State):
         t1 = time.time()
         while (time.time() - t1) <= 60:
             if self.got:
+                self.got = False
                 pub_sound.publish("Yes")
                 return 'finished'
         return 'failed'

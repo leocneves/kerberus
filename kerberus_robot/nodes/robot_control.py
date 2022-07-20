@@ -106,7 +106,7 @@ def main():
     rospy.init_node('control_state_machine')
 
     pub_sound = rospy.Publisher('/tts/phrase', String, queue_size=1)
-    velocity_publisher = rospy.Publisher('/cmd_vel', Twist, queue_size=10)
+    velocity_publisher = rospy.Publisher('/cmd_vel', Twist, queue_size=4)
 
     pub_sound.publish(", I am alive")
     # Create a SMACH state machine

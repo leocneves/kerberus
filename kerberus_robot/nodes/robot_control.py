@@ -26,7 +26,7 @@ class StartTalk(smach.State):
         global pub_sound
         rospy.loginfo('Executing state startTalk')
         t1 = time.time()
-        while (time.time() - t1) <= 60 * 3:
+        while (time.time() - t1) <= 60 * 4:
             if self.got:
                 self.got = False
                 pub_sound.publish(", Yes")
@@ -59,7 +59,7 @@ class Action(smach.State):
                 pub_sound.publish(", ok")
 
                 c = time.time()
-                n = 3
+                n = 1.5
                 if self.data == 'walk forward':
                     vel_msg.linear.x = 1.0
                     vel_msg.angular.z = 0.0
@@ -72,12 +72,12 @@ class Action(smach.State):
                         velocity_publisher.publish(vel_msg)
                 elif self.data == 'turn right':
                     vel_msg.linear.x = 0.0
-                    vel_msg.angular.z = 1.0
+                    vel_msg.angular.z = -1.0
                     while (time.time() - c) < n:
                         velocity_publisher.publish(vel_msg)
                 elif self.data == 'turn left':
                     vel_msg.linear.x = 0.0
-                    vel_msg.angular.z = -1.0
+                    vel_msg.angular.z = 1.0
                     while (time.time() - c) < n:
                         velocity_publisher.publish(vel_msg)
 
@@ -107,7 +107,7 @@ def main():
 
     pub_sound = rospy.Publisher('/tts/phrase', String, queue_size=1)
     velocity_publisher = rospy.Publisher('/cmd_vel', Twist, queue_size=4)
-
+    time.sleep(5)
     pub_sound.publish(", I am alive")
     # Create a SMACH state machine
     sm = smach.StateMachine(outcomes=['outcome4'])

@@ -52,7 +52,7 @@ def main():
     global pub_sound
     rospy.init_node('control_state_machine')
 
-    pub_sound = rospy.Publisher('/tts/phrase', String, queue_size=10)
+    pub_sound = rospy.Publisher('/tts/phrase', String, queue_size=1)
 
     # Create a SMACH state machine
     sm = smach.StateMachine(outcomes=['outcome4'])

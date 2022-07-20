@@ -10,7 +10,7 @@
 
   <include file="$(find kerberus_robot)/launch/ros_vosk.launch" />
 
+  <node name="control_state_machine" pkg="kerberus_robot" type="robot_control.py" respawn="true"/>
 
-  
 
 </launch>

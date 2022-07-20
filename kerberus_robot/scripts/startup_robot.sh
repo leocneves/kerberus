@@ -25,4 +25,4 @@ echo "##### PERMISSIONS ADDED! #####"
 
 echo "##### STARTING ROS... #####"
 # running sensor nodes
-roslaunch kerberus_robot sonar.launch
+roslaunch kerberus_robot startup.launch

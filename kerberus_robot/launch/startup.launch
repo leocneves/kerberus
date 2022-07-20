@@ -7,4 +7,10 @@
     <param name="baud" value="57600"/>
   </node>
 
+
+  <include file="$(find kerberus_robot)/launch/ros_vosk.launch" />
+
+
+  
+
 </launch>

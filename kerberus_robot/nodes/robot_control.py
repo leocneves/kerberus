@@ -19,7 +19,7 @@ class StartTalk(smach.State):
         if data.data == 'robot':
             self.got = True
         else:
-            self.got = True
+            self.got = False
 
     def execute(self, data):
         global pub_sound

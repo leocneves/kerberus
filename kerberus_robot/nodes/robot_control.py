@@ -25,9 +25,9 @@ class StartTalk(smach.State):
         global pub_sound
         rospy.loginfo('Executing state startTalk')
         t1 = time.time()
-        while (time.time() - t1) <= 30:
+        while (time.time() - t1) <= 60:
             if self.got:
-                pub_sound.pub("Yes")
+                pub_sound.publish("Yes")
                 return 'finished'
         return 'failed'
 
@@ -40,7 +40,7 @@ class Test(smach.State):
         global pub_sound
         rospy.loginfo('Executing state TEST')
         time.sleep(2)
-        pub_sound.pub("Nice, I can hear you very well Leonardo")
+        pub_sound.publish("Nice, I can hear you very well Leonardo")
 
         return 'finished'
 

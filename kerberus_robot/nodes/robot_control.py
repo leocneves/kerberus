@@ -1,10 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import roslib
 import rospy
 import smach
 import smach_ros
-from std_msgs import String
+from std_msgs.msg import String
 import time
 
 # define state startTalk

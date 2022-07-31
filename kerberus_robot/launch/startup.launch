@@ -1,16 +1,24 @@
 <launch>
 
+  <!-- Initialize sonar -->
   <node name="sonar_publisher" pkg="kerberus_robot" type="sonar_publisher.py" respawn="true"/>
-
+  <!-- Initialize motors / arduino -->
   <node pkg="rosserial_python" type="serial_node.py" name="serial_node">
     <param name="port" value="/dev/ttyACM0"/>
     <param name="baud" value="57600"/>
   </node>
-
-
+  <!-- Initialize voice -->
   <include file="$(find kerberus_robot)/launch/ros_vosk.launch" />
+  <!-- Initialize kinect and laser -->
+  <include file="$(find freenect_launch)/launch/freenect.launch">
+    <param name="depth_registration" type="bool" value="true" />
+  </include>
 
+  <node pkg="pointcloud_to_laserscan" type="pointcloud_to_laserscan_node" name="pointcloud_to_laserscan_node">
+    <remap from="/cloud_in" to="/camera/depth_registered/points" />
+  </node>
+
+  <!-- Initialize control -->
   <node name="control_state_machine" pkg="kerberus_robot" type="robot_control.py" respawn="true"/>
-
 
 </launch>

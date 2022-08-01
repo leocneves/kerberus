@@ -22,11 +22,11 @@
   <!-- <node name="tf_broadcaster" pkg="kerberus_robot" type="tf_broadcaster.py" respawn="true"/> -->
 
   <node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0.04 0.0 0.3 0.0 0.0 0.0 base_link laser 100"/>
-  <node pkg="tf" type="static_transform_publisher" name="base_to_camera" args="0.04 0.0 0.3 0.0 0.0 0.0 base_link camera_base_link1 100"/>
+  <!-- <node pkg="tf" type="static_transform_publisher" name="base_to_camera" args="0.04 0.0 0.3 0.0 0.0 0.0 base_link camera_base_link1 100"/> -->
   <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_footprint" args="0.0 0.0 z 0.0 0.0 0.0 base_footprint  base_link 100"/> -->
 
   <!-- Initialize mapping -->
-  <param name="/use_sim_time" value="false"/>
+  <!-- <param name="/use_sim_time" value="false"/> -->
   <arg name="geotiff_map_file_path" default="$(find kerberus_robot)/maps"/>
 
   <include file="$(find hector_mapping)/launch/mapping_default.launch">

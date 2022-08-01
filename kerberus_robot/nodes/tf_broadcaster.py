@@ -12,12 +12,18 @@ if __name__ == '__main__':
         br.sendTransform((0.04, 0.0, 0.3),
                          (0.0, 0.0, 0.0, 1.0),
                          rospy.Time.now(),
-                         "base_link",
-                         "base_laser")
+                         "/base_link",
+                         "/base_laser")
 
         br.sendTransform((0.04, 0.0, 0.3),
                          (0.0, 0.0, 0.0, 1.0),
                          rospy.Time.now(),
-                         "base_link",
-                         "camera_base_link")
+                         "/base_link",
+                         "/camera_link")
+
+        br.sendTransform((0.04, 0.0, 0.3),
+                         (0.0, 0.0, 0.0, 1.0),
+                         rospy.Time.now(),
+                         "/base_link",
+                         "/laser")
         rate.sleep()

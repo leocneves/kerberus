@@ -25,5 +25,11 @@ if __name__ == '__main__':
                          (0.0, 0.0, 0.0, 1.0),
                          rospy.Time.now(),
                          "/base_link",
+                         "/camera_rgb_optical_frame")
+
+        br.sendTransform((0.04, 0.0, 0.3),
+                         (0.0, 0.0, 0.0, 1.0),
+                         rospy.Time.now(),
+                         "/base_link",
                          "/laser")
         rate.sleep()

@@ -19,7 +19,10 @@
   </node>
 
   <!-- Initialize tf -->
-  <node name="tf_broadcaster" pkg="kerberus_robot" type="tf_broadcaster.py" respawn="true"/>
+  <!-- <node name="tf_broadcaster" pkg="kerberus_robot" type="tf_broadcaster.py" respawn="true"/> -->
+
+  <node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="0.04 0.0 0.3 0.0 0.0 0.0 base_link laser 100"/>
+  <!-- <node pkg="tf" type="static_transform_publisher" name="base_link_footprint" args="0.0 0.0 z 0.0 0.0 0.0 base_footprint  base_link 100"/> -->
 
   <!-- Initialize mapping -->
   <include file="$(find hector_mapping)/launch/mapping_default.launch">

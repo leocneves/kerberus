@@ -18,6 +18,9 @@
     <remap from="/cloud_in" to="/camera/depth_registered/points" />
   </node>
 
+  <!-- Initialize tf -->
+  <node name="tf_broadcaster" pkg="kerberus_robot" type="tf_broadcaster.py" respawn="true"/>
+
   <!-- Initialize control -->
   <node name="control_state_machine" pkg="kerberus_robot" type="robot_control.py" respawn="true"/>
 
